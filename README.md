@@ -11,40 +11,24 @@ Step 1
 
 Make spreadsheet like this one:
 
-<a href="https://docs.google.com/spreadsheet/ccc?key=0AqrUvD5TZZs3dF9ULUh5X1JlakVJRGFHaWRZQmFuZEE">https://docs.google.com/spreadsheet/ccc?key=0AqrUvD5TZZs3dF9ULUh5X1JlakVJRGFHaWRZQmFuZEE</a>
+<a href="https://docs.google.com/spreadsheet/ccc?key=0AuWQ-iCrlReTdE9YeVJhdFk0NW4zZlpRZTYtQzN3a2c">https://docs.google.com/spreadsheet/ccc?key=0AuWQ-iCrlReTdE9YeVJhdFk0NW4zZlpRZTYtQzN3a2c</a>
 
 Step 2
 ------
 
 **Export it to JSON**:
 
-<a href="https://script.google.com/macros/s/AKfycbxLnEUyElPtL01qHnL7pD2hmTmaO7Tc1yLhjJzQpitpuBfxxBU/exec?sheet%5fid=0AqrUvD5TZZs3dF9ULUh5X1JlakVJRGFHaWRZQmFuZEE&sheet%5fname=Main">https://script.google.com/macros/s/AKfycbxLnEUyElPtL01qHnL7pD2hmTmaO7Tc1yLhjJzQpitpuBfxxBU/exec?sheet%5fid=0AqrUvD5TZZs3dF9ULUh5X1JlakVJRGFHaWRZQmFuZEE&sheet%5fname=Main</a>
+<a href="https://script.google.com/macros/s/AKfycbx2NkSCqHfoiyufF72fBaPDNFq8lOyEncLjxVujKpWyMzIRBZbN/exec?spreadsheet%5fid=0AuWQ-iCrlReTdE9YeVJhdFk0NW4zZlpRZTYtQzN3a2c&sheet%5fname=Main">https://script.google.com/macros/s/AKfycbx2NkSCqHfoiyufF72fBaPDNFq8lOyEncLjxVujKpWyMzIRBZbN/exec?spreadsheet%5fid=0AuWQ-iCrlReTdE9YeVJhdFk0NW4zZlpRZTYtQzN3a2c&sheet%5fname=Main</a>
 
-**Export it to Django locales (gettext .po catalogs)**:
+**Export it to iOS Localization files**: (work in progress)
 
-1. Copy the *contents* of the gettext/ folder to your Django app folder.
--  Edit localize-django-app.py, set SOURCE_URL to your JSONified spreadsheet URL, and run.
--  Run django-admin.py compilemessages
--  Restart your Django instance.
+1. IN PROGRESS
+-  Run the client script that grabs the JSON and writes out the files for your project
 -  Done.
-
-**Export it to [jquery.localize](https://github.com/coderifous/jquery-localize) styled JSON files**:
-
-1. Copy the *contents* of the jquery.localize/ folder to wherever you're trying to serve translations.
--  Edit generate-language-pack.py, set SOURCE_URL to your JSONified spreadsheet URL, and run.
--  Copy the translation-*.json files to the folder where you'll be serving your page.
--  Follow the instructions of [jquery.localize](https://github.com/coderifous/jquery-localize), it should pull in the JSON translation files you've just generated.
--  i.e. Something like $('[data-localize]').localize('translation');
-
-<a href="http://vilimpoc.org/research/LSJ">Here's an example</a> of jquery.localize in action.
-
-**Export it to ZIP**: (work in progress)
-
-Unavailable until Google fixes their ContentService so it doesn't mangle 8-bit "application/zip" or "application/octet-stream" output. :(
 
 More Info
 ---------
 
 To see more info about invoking the app, go to:
 
-<a="https://script.google.com/macros/s/AKfycbxLnEUyElPtL01qHnL7pD2hmTmaO7Tc1yLhjJzQpitpuBfxxBU/exec">https://script.google.com/macros/s/AKfycbxLnEUyElPtL01qHnL7pD2hmTmaO7Tc1yLhjJzQpitpuBfxxBU/exec</a>
+<a="https://script.google.com/macros/s/AKfycbx2NkSCqHfoiyufF72fBaPDNFq8lOyEncLjxVujKpWyMzIRBZbN/exec">https://script.google.com/macros/s/AKfycbx2NkSCqHfoiyufF72fBaPDNFq8lOyEncLjxVujKpWyMzIRBZbN/exec</a>
