@@ -10,12 +10,14 @@
 		54EEE55E1723340E00045130 /* Code.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = Code.js; sourceTree = "<group>"; };
 		54EEE5601723340E00045130 /* Help.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Help.html; sourceTree = "<group>"; };
 		54EEE5621723340E00045130 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		54EEE56417233A4A00045130 /* ios.localize */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ios.localize; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
 		54EEE553172333A200045130 = {
 			isa = PBXGroup;
 			children = (
+				54EEE56417233A4A00045130 /* ios.localize */,
 				54EEE55E1723340E00045130 /* Code.js */,
 				54EEE5601723340E00045130 /* Help.html */,
 				54EEE5621723340E00045130 /* README.md */,
