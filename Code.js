@@ -174,7 +174,7 @@ function generateJson(request) {
             var value = data[r][c] || base_table[key] || data[r][DEFAULT_VALUES_COLUMN];
             
             // Keep count of each time we used the specific translation.
-            if (value == data[r][c])
+            if ((value == data[r][c]) || (value == base_table[key]))
                 nativeTerms++;
             
             lang_dict[key] = value;
