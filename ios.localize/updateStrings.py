@@ -57,6 +57,8 @@ SOURCE_URL = 'https://script.google.com/macros/s/AKfycbx2NkSCqHfoiyufF72fBaPDNFq
 
 PROJECT_NAME = 'LDSMusic'
 
+COMPANY_NAME = 'Intellectual Reserve, Inc.'
+
 if __name__ == '__main__':
     print 'Loading translation spreadsheet data.'
     r = requests.get(SOURCE_URL)
@@ -84,15 +86,20 @@ if __name__ == '__main__':
                 # Create Header
                 username = pwd.getpwuid(os.getuid()).pw_name
                 today = date.today()
-                file_header = textwrap.dedent("""\
-                    /*
-                        {filename}
-                        {project}
-                    
-                        Created by {username} on {create_date}.
-                        Copyright (c) {copyright_year} Intellectual Reserve, Inc. All rights reserved.
-                    */""").format(filename=filename,username=username,create_date=today.strftime('%d/%b/%Y'),copyright_year=today.strftime('%Y'),project=PROJECT_NAME)
-
+                if filename == 'Localizable.strings':
+                    file_header = textwrap.dedent("""\
+                        /*
+                          {filename}
+                          {project}
+                        
+                          Created by {username} on {create_date}.
+                          Copyright (c) {copyright_year} {company_name} All rights reserved.
+                        */""").format(filename=filename,username=username,create_date=today.strftime('%d/%b/%Y'),copyright_year=today.strftime('%Y'),project=PROJECT_NAME,company_name=COMPANY_NAME)
+                elif filename == 'InfoPlist.strings':
+                    file_header = '/* Localized versions of Info.plist keys */'
+                else:
+                    file_header = ''
+                            
                 # Print the Header
                 output.append((u'{header}\n'.format(header=file_header)))
                 # Print all the Keys
